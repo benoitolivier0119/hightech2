@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block titre %}Inscription sur le site{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="text-center">
+        {{ form_start(form) }}
+            {{ form_row(form.username, {
+                "attr" : {"placeholder":"Saisir identifiant"},
+                "label": "Votre identifiant"
+            }) }}
+            {{ form_row(form.password, {
+                "attr" : {"placeholder":"Saisir mot de passe"},
+                "label": "Votre mot de passe"
+            }) }}
+            {{ form_row(form.verificationPassword, {
+                "attr" : {"placeholder":"Saisir mot de passe"},
+                "label": "Vérification mot de passe"
+            }) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-primary" type="submit"><i class="fas fa-pen"></i> S'inscrire</button>
+        {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

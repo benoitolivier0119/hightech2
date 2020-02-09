@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block titre %}Contactez-nous !{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label>Votre nom</label>
+                    <input type="text" required name="nom" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Votre prénom</label>
+                    <input type="text" required name="prenom" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Votre téléphone</label>
+                    <input type="phone" required name="tel" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Votre mail</label>
+                    <input type="mail" required name="mail" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Votre message</label>
+                    <textarea class="form-control" name="message" rows="3" required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

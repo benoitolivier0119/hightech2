@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block titre %}Tous nos PC Portables{% endblock %}
+{% block body %}
+    <div class="container">
+        <h2 class="text-center text-uppercase m-4">Catégories</h2>
+        <div class="row">
+            <div class="col-6">
+                <div class="card border-secondary mb-3">
+                    <div class="card-header text-center bg-dark">
+                        <img src="{{asset("img/portable-a1.jpg")}}" width="250" height="250">
+                    </div>
+                    <div class="card-body bg-dark">
+                        <h4 class="card-title text-center">
+                            <a href="{{ path("portable") }}">PC Portables Windows</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card border-secondary mb-3">
+                    <div class="card-header text-center bg-dark">
+                        <img src="{{asset("img/gamer-a1.jpg")}}" width="250" height="250">
+                    </div>
+                    <div class="card-body bg-dark">
+                        <h4 class="card-title text-center">
+                            <a href="{{ path("gamer") }}">PC Portables Gamer</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="card border-secondary mb-3">
+                    <div class="card-header text-center bg-dark">
+                        <img src="{{asset("img/macbook1.jpg")}}" width="250" height="250">
+                    </div>
+                    <div class="card-body bg-dark">
+                        <h4 class="card-title text-center">
+                            <a href="{{ path("macbook") }}">Macbook</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card border-secondary mb-3">
+                    <div class="card-header text-center bg-dark">
+                        <img src="{{asset("img/chromebook-a1.jpg")}}" width="250" height="250">
+                    </div>
+                    <div class="card-body bg-dark">
+                        <h4 class="card-title text-center">
+                            <a href="{{ path("chromebook") }}">Chromebook</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

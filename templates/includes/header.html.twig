@@ -1,0 +1,56 @@
+<header class="header-main">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path("accueil") }}"><img class="img-fluid logo-header" src="{{ asset('img/logo200.png') }}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto menu-header">
+                    <li class="nav-item">
+                        <a class="nav-link nav-menu-grp" href="{{ path("portable") }}"><i class="fab fa-windows"></i> PC Portable</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menu-grp" href="{{ path("gamer") }}"><i class="fas fa-gamepad"></i> PC Portable Gamer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menu-grp" href="{{ path("macbook") }}"><i class="fab fa-apple"></i> Macbook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menu-grp" href="{{ path("chromebook") }}"><i class="fab fa-chrome"></i> Chromebook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menu-grp" href="{{ path("contact") }}"><i class="far fa-envelope"></i> Contact</a>
+                    </li>
+                </ul>
+                {% if app.user %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <div class="dropdown ml-auto">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-wrench"></i> Admin.</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{{ path("portable_index") }}"><i class="fas fa-pen"></i> PC Portable</a>
+                                <a class="dropdown-item" href="{{ path("gamer_index") }}"><i class="fas fa-pen"></i> PC Portable Gamer</a>
+                                <a class="dropdown-item" href="{{ path("macbook_index") }}"><i class="fas fa-pen"></i> Macbook</a>
+                                <a class="dropdown-item" href="{{ path("chromebook_index") }}"><i class="fas fa-pen"></i> Chromebook</a>
+                            </div>
+                            <span class="text-white">| {{ app.user.username }} </span>
+                            <a class="text-danger" href="{{ path("deconnexion") }}"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                        </div>
+                        {% else %}
+                            <span class="text-white"> {{ app.user.username }} |&nbsp;</span>
+                            <a class="text-danger" href="{{ path("deconnexion") }}"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                    {% endif %}
+                    {% else %}
+                        <div class="dropdown ml-auto">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> Mon compte</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{{ path("connexion") }}"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+                                <a class="dropdown-item" href="{{ path("inscription") }}"><i class="fas fa-pen"></i> Inscription</a>
+                            </div>
+                        </div>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+</header>

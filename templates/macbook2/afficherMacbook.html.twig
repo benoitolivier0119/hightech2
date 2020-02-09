@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ macbook.marque }}{% endblock %}
+{% block titre %}{{ macbook.marque }}{% endblock %}
+{% block body %}
+ <div class="row">
+            <div class="col-12 text-center">
+                <div class="card border-light mb-3">
+                    <div class="card-header text-center">
+                        <img src="{{asset('img/' ~ macbook.image)}}" width="300" height="300">
+                    </div>
+                    <div class="card-body">
+                        <h3>{{ macbook.marque }}</h3>
+                        <p> {{ macbook.description }}</p>
+                        <p>Diagonale : {{ macbook.diagonale }} "</p><hr>
+                        <p>Carte graphique : {{ macbook.chipset }} </p><hr>
+                        <p>Processeur : {{ macbook.processeur }} </p><hr>
+                        <p>Ram : {{ macbook.ram }} Go</p><hr>
+                        <p>Stockage : {{ macbook.stockage }} </p><hr>
+                        <p class="text-success font-weight-bold">Prix : {{ macbook.prix }} €</p><hr>
+                    <a class="btn btn-success" href=""><i class="fas fa-shopping-basket"></i> Ajouter au panier</a>
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}
